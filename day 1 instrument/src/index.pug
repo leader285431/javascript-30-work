@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+html(lang="zh_TW")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        <!-- build:css css/plugin.min.css -->
+        link(rel="stylesheet", href="css/normalize.css")
+        <!-- endbuild -->
+
+        link(rel="stylesheet", href="css/style.css")
+
+        title Drumset
+    body
+        .container
+            .keys
+                .key(data-key='65')
+                    kbd A
+                    span.sound clap
+                .key(data-key='83')
+                    kbd S
+                    span.sound hihat
+                .key(data-key='68')
+                    kbd D
+                    span.sound kick
+                .key(data-key='70')
+                    kbd F
+                    span.sound openhat
+                .key(data-key='71')
+                    kbd G
+                    span.sound boom
+                .key(data-key='72')
+                    kbd H 
+                    span.sound ride
+                .key(data-key='74')
+                    kbd J
+                    span.sound snare
+                .key(data-key='75')
+                    kbd K
+                    span.sound tom
+                .key(data-key='76')
+                    kbd L
+                    span.sound tink
+
+        audio(data-key='65' src='sounds/clap-fat.wav')
+        audio(data-key='83' src='sounds/hihat-plain.wav')
+        audio(data-key='68' src='sounds/kick-floppy.wav')
+        audio(data-key='70' src='sounds/openhat-808.wav')
+        audio(data-key='71' src='sounds/kick-big.wav')
+        audio(data-key='72' src='sounds/ride-acoustic01.wav')
+        audio(data-key='74' src='sounds/snare-acoustic01.wav')
+        audio(data-key='75' src='sounds/tom-acoustic01.wav')
+        audio(data-key='76' src='sounds/tom-acoustic02.wav')
+
+        <!-- build:js js/main.min.js -->
+        script(src="js/app.js" type='text/javascript')
+        <!-- endbuild -->

@@ -1,0 +1,41 @@
+*
+    box-sizing: border-box
+    position: relative
+    
+html, body
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    font-size: 16px
+    background-color: #eee
+
+.keys
+    display: flex
+    align-items: center
+    justify-content: center
+
+.key
+    padding: 20px
+    width: 100px
+    border: 1px solid
+    border-radius: calc( 100px / 1.61803398875 )
+    background: #eee
+    text-align: center
+    cursor: pointer
+    transition: 0.07s
+    &.playing
+        transform: scale(1.1)
+        border: 1px solid #ccc
+        box-shadow: 0 0 10px #ccc
+        background: #ccc
+    
+    &:hover, &:active
+        background: #ddd
+    
+    kbd
+        font-size: 2em
+    span
+        display: block
+        
