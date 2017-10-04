@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(charset='UTF-8')
+    // build:css css/main.min.css
+    link(rel="stylesheet", href="./css/style.css")
+    // endbuild
+    
+    title JS + CSS Clock
+  body
+    .clock
+      .clock-face
+        .hand.hour-hand
+        .hand.min-hand
+        .hand.second-hand
+
+    // build:js js/main.min.js
+    script(src="./js/app.js")
+    // endbuild
