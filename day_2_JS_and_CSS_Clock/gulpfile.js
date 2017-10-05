@@ -10,10 +10,10 @@ var pug = require('gulp-pug');
 var browserSync = require('browser-sync');
 var changed = require('gulp-changed');
 var runSequence = require('run-sequence');
-var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
 var del = require('del');
+var cached = require('gulp-cached');
 
 
 // src & dest
@@ -44,7 +44,7 @@ var paths = {
 gulp.task('sass', function() {
     return gulp.src(paths.sass.src)
 
-        .pipe(changed(paths.sass.dest, { extension: '.css' }))
+        .pipe(cache('compiling'))
 
         .pipe(sass().on('error', sass.logError))
 
@@ -57,7 +57,7 @@ gulp.task('sass', function() {
 gulp.task('pug', function() {
     return gulp.src(paths.pug.src)
 
-        .pipe(changed(paths.pug.dest, { extension: '.html' }))
+        .pipe(cached('comilingHTML'))
 
         .pipe(pug({
             pretty: true
@@ -92,18 +92,6 @@ gulp.task('watch', ['sass', 'pug'], function() {
 // del dist
 gulp.task('clean:dist', function() {
     return del.sync('dist');
-})
-
-// useref
-gulp.task('useref', ['pug', 'sass'], function() {
-    return gulp.src(paths.useref.src)
-    
-        .pipe(useref())
-
-        .pipe(gulpIf('*.js', uglify()))
-        .pipe(gulpIf('*.css', cssnano()))
-
-        .pipe(gulp.dest(paths.useref.dest))
 })
 
 // build
