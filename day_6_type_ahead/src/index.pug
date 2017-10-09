@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        // build:css css/main.min.css
+        link(rel="stylesheet", href="css/normalize.css")
+        link(rel="stylesheet", href="css/style.css")
+        // endbuild
+        title Type Ahead 👀
+    body
+
+        form.search-form(action="")
+            input.search(type="text", name="", placeholder="City or State")
+            ul.suggestions
+                li Filter for a city
+                li or a state
+        // build:js scripts/main.min.js
+        script(src="scripts/app.js")
+        // endbuild
